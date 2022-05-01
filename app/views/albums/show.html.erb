@@ -6,6 +6,14 @@
 </p>
 
 <p>
+  <strong>Photos:</strong>
+</p>
+  <div>
+  <% @album.photos.each_with_index do |photo, index| %>
+    <%= image_tag(photo) %>
+  <% end %>
+  </div>
+<p>
   <strong>Album date:</strong>
   <%= @album.album_date %>
 </p>

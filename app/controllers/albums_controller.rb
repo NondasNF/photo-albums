@@ -1,3 +1,4 @@
+require 'json'
 class AlbumsController < ApplicationController
   before_action :set_album, only: %i[ show edit update destroy ]
 
@@ -22,7 +23,7 @@ class AlbumsController < ApplicationController
   # POST /albums or /albums.json
   def create
     @album = Album.new(album_params)
-
+  
     respond_to do |format|
       if @album.save
         format.html { redirect_to album_url(@album), notice: "Album was successfully created." }
@@ -65,6 +66,6 @@ class AlbumsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def album_params
-      params.require(:album).permit(:name, :album_date)
+      params.require(:album).permit(:name, { photos: [] }, :album_date)
     end
 end
