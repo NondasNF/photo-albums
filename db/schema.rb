@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2022_05_01_204518) do
   end
 
   create_table "albums", force: :cascade do |t|
-    t.string "name"
-    t.date "album_date"
+    t.string "name", null: false
+    t.date "album_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
