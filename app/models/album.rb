@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
   has_many_attached :photos, dependent: :destroy
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, length: { maximum: 50 }
   validate :maximum_of_twenty_photos
 
   private

@@ -11,6 +11,7 @@
   <div>
   <% @album.photos.each_with_index do |photo, index| %>
     <%= image_tag(photo) %>
+    <%= link_to 'Destroy', delete_attached_image_album_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
   </div>
 <p>
@@ -18,5 +19,8 @@
   <%= @album.album_date %>
 </p>
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
+<div>
+<%= link_to 'Edit', edit_album_path(@album) %>
 <%= link_to 'Back', albums_path %>
+<%= link_to 'Destroy', @album, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
