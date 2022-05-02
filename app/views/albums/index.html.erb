@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Albums</h1>
-
-<table>
+<%= link_to 'New Album', new_album_path %>
+<br>
+<table class="albums-table">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Album date</th>
+    <tr class="albums-table__head">
+      <th align="center" >Name</th>
+      <th align="center" >Album date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="albums-table__body">
     <% @albums.each do |album| %>
       <tr>
-        <td><%= album.name %></td>
-        <td><%= album.album_date %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align="center" ><%= link_to  album.name, album %></td>
+        <td align="center" ><%= album.album_date %></td>
+        <td align="center" ><%= link_to 'DELETE', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Album', new_album_path %>

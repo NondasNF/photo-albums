@@ -12,21 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name,
+      :class => "field__title" %>
+    <%= form.text_field :name,
+      :class => "field__input field__input-name" %>
   </div>
 
   <div class="field">
-    <%= form.label :photos %>
-    <%= form.file_field :photos, multiple: true %>
+    <%= form.label :photos,
+      :class => "field__title" %>
+    <%= form.file_field :photos, multiple: true,
+      :class => "field__input field__input-file" %>
   </div>
 
   <div class="field">
-    <%= form.label :album_date %>
-    <%= form.date_field :album_date %>
+    <%= form.label :album_date,
+      :class => "field__title" %>
+    <%= form.date_field :album_date,
+      :class => "field__input" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit(:class => "actions__input") %>
   </div>
 <% end %>
